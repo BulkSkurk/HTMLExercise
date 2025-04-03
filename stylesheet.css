@@ -4,9 +4,6 @@ body {
 h1 {
   margin: 32px 30%;
 }
-.weather p {
-  display: inline-block;
-}
 .strip {
   min-height: 100px;
   height: 10%;
