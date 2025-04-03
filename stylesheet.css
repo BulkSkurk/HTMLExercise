@@ -1,0 +1,69 @@
+body {
+  font-family: Cormorant, serif;
+}
+h1 {
+  margin: 32px 30%;
+}
+.weather p {
+  display: inline-block;
+}
+.strip {
+  min-height: 100px;
+  height: 10%;
+  width: 100%;
+  background-color: rebeccapurple;
+  color: white;
+  text-align: center;
+}
+.strip h2 {
+  display: inline-flex;
+  font-weight: 100;
+  font-size: 52px;
+  font-family: 'Imperial Script', serif;
+}
+.navbar li {
+  list-style: none;
+  display: inline-block;
+  color: whitesmoke;
+  margin: 0 auto;
+  margin-top: 1%;
+  font-size: 28px;
+}
+.navbar li a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+.navbar li a:hover {
+  color: rgba(245, 245, 245, 0.639);
+}
+.newsarticle {
+  margin: 32px 30%;
+  padding: 5px;
+  box-shadow: 10px 5px 5px black, 15px 10px 10px rebeccapurple;
+  background-color: white;
+  border-left: 2px solid rebeccapurple;
+}
+.newsarticle img {
+  height: 50%;
+  width: 50%;
+  padding-left: 10px;
+  box-shadow: 10px 5px 5px rgb(240, 240, 240);
+}
+.newsarticle button {
+  margin: 28px 10px;
+}
+.newsarticle p:first-of-type:first-letter {
+  font-size: 200%;
+}
+.news {
+  border-top: 2px solid black;
+}
+.quote {
+  border-left: 2px solid rebeccapurple;
+  background-color: gainsboro;
+  padding-bottom: 2%;
+  display: inline-block;
+}
+.hidden {
+  display: none;
+}
