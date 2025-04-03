@@ -4,6 +4,11 @@ body {
 h1 {
   margin: 32px 30%;
 }
+.weather {
+  height: 50%;
+  width: 20%;
+  border: 2px solid black;
+}
 .strip {
   min-height: 100px;
   height: 10%;
