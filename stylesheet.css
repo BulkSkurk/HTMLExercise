@@ -1,7 +1,29 @@
 body {
   font-family: Cormorant, serif;
 }
-h1 {
+<style>
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+footer {
+  background-color: #f2f2f2;
+  padding: 25px;
+}
+
+.carousel-inner img {
+  width: 100%;
+  margin: auto;
+  min-height: 200px;
+}
+@media (max-width: 600px) {
+  .carousel-caption {
+    display: none;
+  }
+}
+
+/* h1 {
   margin: 32px 30%;
 }
 .strip {
@@ -26,8 +48,9 @@ h1 {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 50%;
-  height: 50%;
+  width: 25%;
+  margin-bottom: 0;
+  border-radius: 0;
 }
 .newsarticle {
   margin: 32px 30%;
@@ -56,13 +79,13 @@ h1 {
   background-color: gainsboro;
   padding-bottom: 2%;
   display: inline-block;
-}
+} */
 .hidden {
   display: none;
 }
 
 .carousel-inner img {
-  width: 100%;
+  width: 50%;
   margin: auto;
   min-height: 200px;
 }
