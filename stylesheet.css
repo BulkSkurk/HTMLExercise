@@ -4,31 +4,14 @@ body {
 h1 {
   margin: 32px 30%;
 }
-.weather {
-  height: 50%;
-  width: 20%;
-  border: 2px solid black;
-}
 .strip {
-  min-height: 100px;
-  height: 10%;
-  width: 100%;
+  min-height: 50px;
   background-color: rebeccapurple;
   color: white;
-  text-align: center;
-}
-.strip h2 {
-  display: inline-flex;
-  font-weight: 100;
-  font-size: 52px;
-  font-family: 'Imperial Script', serif;
 }
 .navbar li {
   list-style: none;
-  display: inline-block;
   color: whitesmoke;
-  margin: 0 auto;
-  margin-top: 1%;
   font-size: 28px;
 }
 .navbar li a {
@@ -37,6 +20,14 @@ h1 {
 }
 .navbar li a:hover {
   color: rgba(245, 245, 245, 0.639);
+}
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  height: 50%;
 }
 .newsarticle {
   margin: 32px 30%;
@@ -68,4 +59,15 @@ h1 {
 }
 .hidden {
   display: none;
+}
+
+.carousel-inner img {
+  width: 100%;
+  margin: auto;
+  min-height: 200px;
+}
+@media (max-width: 600px) {
+  .carousel-caption {
+    display: none;
+  }
 }
