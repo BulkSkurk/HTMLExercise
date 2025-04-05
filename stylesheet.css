@@ -1,28 +1,24 @@
 body {
   font-family: Cormorant, serif;
 }
-<style>
-/* Remove the navbar's default margin-bottom and rounded borders */
-.navbar {
-  margin-bottom: 0;
-  border-radius: 0;
+/* Carousel base class */
+.carousel {
+  margin-bottom: 4rem;
 }
-footer {
-  background-color: #f2f2f2;
-  padding: 25px;
-}
-
-.carousel-inner img {
-  width: 100%;
-  margin: auto;
-  min-height: 200px;
-}
-@media (max-width: 600px) {
-  .carousel-caption {
-    display: none;
-  }
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
 }
 
+/* Declare heights because of positioning of img element */
+.carousel-item {
+  height: 32rem;
+}
+#logo {
+  width: 25px;
+  height: 25px;
+}
 /* h1 {
   margin: 32px 30%;
 }
