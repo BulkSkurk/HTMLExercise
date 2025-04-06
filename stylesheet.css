@@ -23,15 +23,23 @@ body {
 .carousel-item {
   height: 32rem;
 }
-.carousel-inner img {
-  width: 50%;
-  margin: auto;
-  min-height: 200px;
+.carousel-inner {
+  background-color: rgb(var(--bs-tertiary-color-rgb));
 }
 @media (max-width: 600px) {
   .carousel-caption {
     display: none;
   }
+}
+.carousel-item img {
+  min-height: 200px;
+  margin: auto;
+  width: 50%;
+  height: 80%;
+  opacity: 10%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
 }
 /*---- Featurette Items, Bootstrap ----*/
 .featurette-divider {
