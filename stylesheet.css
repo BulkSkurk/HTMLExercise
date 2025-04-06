@@ -1,0 +1,156 @@
+/*---- General Body Settings ----*/
+body {
+  font-family: Cormorant, serif;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  color: rgb(var(--bs-tertiary-color-rgb));
+}
+a {
+  text-decoration: none;
+}
+.logo {
+  width: 25px;
+  height: 25px;
+}
+.col-md-7 {
+  padding-left: 2rem;
+}
+/*---- Carousel Items, Bootstrap ----*/
+.carousel {
+  margin-bottom: 4rem;
+}
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+.carousel-item {
+  height: 32rem;
+}
+.carousel-inner {
+  background-color: rgb(var(--bs-tertiary-color-rgb));
+}
+@media (max-width: 600px) {
+  .carousel-caption {
+    display: none;
+  }
+}
+.carousel-item img {
+  min-height: 200px;
+  margin: auto;
+  width: 50%;
+  height: 80%;
+  opacity: 20%;
+  display: flex;
+  justify-self: center;
+}
+/*---- Featurette Items, Bootstrap ----*/
+.featurette-divider {
+  margin: 5rem 0;
+}
+.featurette-heading {
+  letter-spacing: -0.05rem;
+}
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.marketing .col-lg-4 p {
+  margin-right: 0.75rem;
+  margin-left: 0.75rem;
+}
+.featurette-divider {
+  margin: 5rem 0;
+}
+.featurette-heading {
+  letter-spacing: -0.05rem;
+}
+.featurette-image {
+  width: 568px;
+  height: 320px;
+  margin-top: 10rem;
+  margin-left: 10rem;
+  box-shadow: -10px 10px 0px rgba(33, 33, 33, 1), -20px 20px 0px rgba(33, 33, 33, 0.7),
+    -30px 30px 0px rgba(33, 33, 33, 0.4), -40px 40px 0px rgba(33, 33, 33, 0.1);
+}
+@media (min-width: 40em) {
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+.hidden {
+  display: none;
+}
+
+.hidden-text {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease, max-height 0.5s ease;
+}
+
+.hidden-text.show {
+  opacity: 1;
+  max-height: 1000px;
+}
+
+/*---- Text Formatting ----*/
+.quote {
+  border-left: 2px solid olivedrab;
+  background-color: gainsboro;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+/*---- Button Formatting ----*/
+.btn-primary {
+  background-color: olivedrab;
+  border: 1px solid black;
+}
+.read-more-btn {
+  background-color: olivedrab;
+  color: #000000;
+  display: flex;
+  font-family: system-ui;
+  font-weight: 500;
+  justify-content: center;
+  line-height: 1.75rem;
+  padding: 0.75rem 1.65rem;
+  position: relative;
+  width: 100%;
+  max-width: 260px;
+  transform: rotate(-2deg);
+}
+.read-more-btn:hover {
+  background-color: rgb(75, 101, 25);
+}
+.read-more-btn::after {
+  content: '';
+  position: absolute;
+  border: 1px solid #000000;
+  bottom: 4px;
+  left: 4px;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+}
+/*---- Weather gadget ----*/
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #ffffff;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 236, 210, 1));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 236, 210, 1));
+}
