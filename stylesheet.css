@@ -8,6 +8,9 @@ body {
 a {
   text-decoration: none;
 }
+li a {
+  margin-left: 1rem;
+}
 .logo {
   width: 25px;
   height: 25px;
