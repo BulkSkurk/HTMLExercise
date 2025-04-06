@@ -1,9 +1,18 @@
+/*---- General Body Settings ----*/
 body {
   font-family: Cormorant, serif;
   padding-top: 3rem;
   padding-bottom: 3rem;
   color: rgb(var(--bs-tertiary-color-rgb));
 }
+#logo {
+  width: 25px;
+  height: 25px;
+}
+.col-md-7 {
+  padding-left: 2rem;
+}
+/*---- Carousel Items, Bootstrap ----*/
 .carousel {
   margin-bottom: 4rem;
 }
@@ -14,10 +23,17 @@ body {
 .carousel-item {
   height: 32rem;
 }
-#logo {
-  width: 25px;
-  height: 25px;
+.carousel-inner img {
+  width: 50%;
+  margin: auto;
+  min-height: 200px;
 }
+@media (max-width: 600px) {
+  .carousel-caption {
+    display: none;
+  }
+}
+/*---- Featurette Items, Bootstrap ----*/
 .featurette-divider {
   margin: 5rem 0;
 }
@@ -35,7 +51,6 @@ body {
 .featurette-divider {
   margin: 5rem 0;
 }
-
 .featurette-heading {
   letter-spacing: -0.05rem;
 }
@@ -45,14 +60,12 @@ body {
   margin-top: 10rem;
   margin-left: 10rem;
 }
-
 @media (min-width: 40em) {
   .carousel-caption p {
     margin-bottom: 1.25rem;
     font-size: 1.25rem;
     line-height: 1.4;
   }
-
   .featurette-heading {
     font-size: 50px;
   }
@@ -67,16 +80,6 @@ body {
   display: none;
 }
 
-.carousel-inner img {
-  width: 50%;
-  margin: auto;
-  min-height: 200px;
-}
-@media (max-width: 600px) {
-  .carousel-caption {
-    display: none;
-  }
-}
 .hidden-text {
   opacity: 0;
   max-height: 0;
@@ -91,9 +94,14 @@ body {
 
 /*---- Text Formatting ----*/
 .quote {
-  border-left: 2px solid rebeccapurple;
+  border-left: 2px solid olivedrab;
   background-color: gainsboro;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
   display: inline-block;
+}
+/*---- Button Formatting ----*/
+.btn-primary {
+  background-color: olivedrab;
+  border: 1px solid black;
 }
