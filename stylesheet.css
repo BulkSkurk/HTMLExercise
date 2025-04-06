@@ -5,6 +5,9 @@ body {
   padding-bottom: 3rem;
   color: rgb(var(--bs-tertiary-color-rgb));
 }
+a {
+  text-decoration: none;
+}
 .logo {
   width: 25px;
   height: 25px;
