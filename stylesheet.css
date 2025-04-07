@@ -227,5 +227,7 @@ li a {
     height: auto; /* allow it to grow with content */
     min-height: 400px; /* or set a specific mobile height */
     width: 100%;
+    position: absolute;
+    left: 0;
   }
 }
