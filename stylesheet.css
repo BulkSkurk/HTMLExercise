@@ -39,7 +39,7 @@ li a {
     background-color: rgba(0, 0, 0, 0.5); /* optional readability boost */
     overflow: visible;
     position: static; /* or relative if you still need it to be inside the carousel */
-    display: none;
+    background-color: purple;
   }
 }
 .carousel-item {
