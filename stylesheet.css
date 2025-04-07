@@ -23,18 +23,24 @@ li a {
   padding-top: 10px;
   background-color: rgb(var(--bs-tertiary-color-rgb));
 }
-/* .carousel-caption {
-  min-height: 520px;
-  max-height: 768px;
-  bottom: 3rem;
-  z-index: 10;
-  overflow: hidden;
-} */
 .carousel-caption {
   position: absolute;
   left: 160px;
   top: 40px;
   overflow: auto;
+}
+@media (max-width: 767.98px) {
+  .carousel-caption {
+    left: 0;
+    right: 0;
+    top: auto;
+    bottom: 20px;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.5); /* optional readability boost */
+    overflow: visible;
+    position: static; /* or relative if you still need it to be inside the carousel */
+    display: none;
+  }
 }
 .carousel-item {
   height: auto;
@@ -42,11 +48,6 @@ li a {
 }
 .carousel-inner {
   background-color: rgb(var(--bs-tertiary-color-rgb));
-}
-@media (max-width: 600px) {
-  .carousel-caption {
-    display: none;
-  }
 }
 .carousel-item img {
   min-height: 200px;
