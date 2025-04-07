@@ -223,21 +223,9 @@ li a {
     height: auto !important;
     opacity: 0.2; /* or whatever value you want */
   }
-}
-
-@media (max-width: 767.98px) {
   #myCarousel {
     height: auto; /* allow it to grow with content */
     min-height: 400px; /* or set a specific mobile height */
-  }
-
-  .carousel-item {
-    height: auto; /* make sure items adapt too */
-  }
-
-  .carousel-caption {
-    position: static; /* remove absolute positioning */
-    padding: 1rem;
-    background-color: rgba(0, 0, 0, 0.5); /* optional */
+    width: 100%;
   }
 }
