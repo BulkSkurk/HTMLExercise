@@ -1,7 +1,7 @@
 /*---- General Body Settings ----*/
 body {
   font-family: Cormorant, serif;
-  padding-top: 3rem;
+  padding-top: 40px;
   padding-bottom: 3rem;
   color: rgb(var(--bs-tertiary-color-rgb));
 }
@@ -20,14 +20,25 @@ li a {
 }
 /*---- Carousel Items, Bootstrap ----*/
 .carousel {
-  margin-bottom: 4rem;
+  padding-top: 10px;
+  background-color: rgb(var(--bs-tertiary-color-rgb));
 }
-.carousel-caption {
+/* .carousel-caption {
+  min-height: 520px;
+  max-height: 768px;
   bottom: 3rem;
   z-index: 10;
+  overflow: hidden;
+} */
+.carousel-caption {
+  position: absolute;
+  left: 160px;
+  top: 40px;
+  overflow: auto;
 }
 .carousel-item {
-  height: 32rem;
+  height: auto;
+  min-height: 32rem;
 }
 .carousel-inner {
   background-color: rgb(var(--bs-tertiary-color-rgb));
@@ -171,14 +182,14 @@ li a {
 }
 .sidenav p {
   padding: 6px 8px 6px 16px;
-  font-size: 25px;
+  font-size: 15px;
   color: whitesmoke;
 }
 
 .sidenav a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 16px;
   color: #818181;
   display: block;
 }
@@ -189,6 +200,7 @@ li a {
 
 .main {
   margin-left: 160px;
+  padding-top: 10px;
 }
 
 @media screen and (max-height: 450px) {
@@ -196,6 +208,6 @@ li a {
     padding-top: 15px;
   }
   .sidenav a {
-    font-size: 18px;
+    font-size: 15px;
   }
 }
