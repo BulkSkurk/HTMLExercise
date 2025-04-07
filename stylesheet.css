@@ -212,3 +212,15 @@ li a {
     position: static !important;
   }
 }
+@media (max-width: 767.98px) {
+  .carousel-inner {
+    height: auto !important;
+    padding: 1rem !important;
+  }
+
+  .carousel-item img {
+    width: 100% !important;
+    height: auto !important;
+    opacity: 0.2; /* or whatever value you want */
+  }
+}
