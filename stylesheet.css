@@ -29,19 +29,6 @@ li a {
   top: 40px;
   overflow: auto;
 }
-@media (max-width: 767.98px) {
-  .carousel-caption {
-    left: 0;
-    right: 0;
-    top: auto;
-    bottom: 20px;
-    padding: 1rem;
-    background-color: rgba(0, 0, 0, 0.5); /* optional readability boost */
-    overflow: visible;
-    position: static; /* or relative if you still need it to be inside the carousel */
-    background-color: purple;
-  }
-}
 .carousel-item {
   height: auto;
   min-height: 32rem;
@@ -210,5 +197,18 @@ li a {
   }
   .sidenav a {
     font-size: 15px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .carousel-caption {
+    left: 0 !important;
+    right: 0 !important;
+    top: auto !important;
+    bottom: 20px !important;
+    padding: 1rem !important;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    overflow: visible !important;
+    position: static !important;
   }
 }
