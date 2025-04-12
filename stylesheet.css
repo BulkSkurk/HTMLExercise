@@ -221,11 +221,11 @@ li a {
   .carousel-item img {
     width: 100% !important;
     height: auto !important;
-    opacity: 0.2; /* or whatever value you want */
+    opacity: 0.2;
   }
   #myCarousel {
-    height: auto; /* allow it to grow with content */
-    min-height: 400px; /* or set a specific mobile height */
+    height: auto;
+    min-height: 400px;
     width: 100%;
     position: absolute;
     left: 0;
