@@ -8,3 +8,5 @@ document.querySelectorAll('.read-more-btn').forEach((button) => {
     button.innerHTML = valueToSet;
   });
 });
+
+function addNews() {}
