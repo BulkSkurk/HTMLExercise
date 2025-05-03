@@ -46,7 +46,7 @@ li a {
   justify-self: center;
 }
 /*---- Article Form formatting ----*/
-.article-form {
+#article-form {
   display: flex;
   flex-direction: column;
 }

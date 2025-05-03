@@ -16,11 +16,23 @@ document.querySelectorAll('.read-more-btn, #article-btn').forEach((button) => {
   });
 });
 
-function addNewsForm() {
-  let newsDiv = document.createElement('div');
-  newsDiv.textContent = 'This is new!';
-  document.getElementById('article-body').append(newsDiv);
-  //Works, save for later
+// function addNewsForm() {
+//   let newsDiv = document.createElement('div');
+//   newsDiv.textContent = 'This is new!';
+//   document.getElementById('article-body').append(newsDiv);
+//   //Works, save for later
+// }
+function addNewsForm(event) {
+  event.preventDefault();
+
+  const form = event.target;
+  const title = form.newsTitle.value;
+
+  console.log(title);
 }
 
 //document.getElementById('article-btn').addEventListener('click', addNewsForm);
+document.getElementById('article-form').addEventListener('submit', addNewsForm);
+
+//AI Newsletter? Tack Martin
+//Stupid commercial banner
