@@ -9,4 +9,8 @@ document.querySelectorAll('.read-more-btn').forEach((button) => {
   });
 });
 
-function addNews() {}
+function addNews() {
+  let newsDiv = document.createElement('p');
+  newsDiv.textContent = 'This is new!';
+  document.getElementById('article-body');
+}
