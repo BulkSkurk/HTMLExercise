@@ -1,16 +1,26 @@
 'use strict';
 
-document.querySelectorAll('.read-more-btn').forEach((button) => {
+document.querySelectorAll('.read-more-btn, #article-btn').forEach((button) => {
   button.addEventListener('click', function () {
     const hiddenText = button.closest('.col-md-7').querySelector('.hidden-text');
     hiddenText.classList.toggle('show');
-    var valueToSet = button.innerHTML == 'Read More!' ? 'Read Less!' : 'Read More!';
+
+    let valueToSet = '';
+    if (button.innerHTML === 'Read More!' || button.innerHTML === 'Read Less!') {
+      valueToSet = button.innerHTML == 'Read More!' ? 'Read Less!' : 'Read More!';
+    } else if (button.innerHTML === 'Add Article' || button.innerHTML === 'Hide Form') {
+      valueToSet = button.innerHTML == 'Add Article' ? 'Hide Form' : 'Add Article';
+    }
     button.innerHTML = valueToSet;
+    //Kind of ugly fix, revisit this.
   });
 });
 
-function addNews() {
-  let newsDiv = document.createElement('p');
+function addNewsForm() {
+  let newsDiv = document.createElement('div');
   newsDiv.textContent = 'This is new!';
-  document.getElementById('article-body');
+  document.getElementById('article-body').append(newsDiv);
+  //Works, save for later
 }
+
+//document.getElementById('article-btn').addEventListener('click', addNewsForm);

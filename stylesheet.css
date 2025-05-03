@@ -45,6 +45,11 @@ li a {
   display: flex;
   justify-self: center;
 }
+/*---- Article Form formatting ----*/
+.article-form {
+  display: flex;
+  flex-direction: column;
+}
 /*---- Featurette Items, Bootstrap ----*/
 .featurette-divider {
   margin: 5rem 0;
@@ -120,7 +125,7 @@ li a {
   border: 1px solid black;
 }
 .read-more-btn,
-.article-btn {
+#article-btn {
   background-color: olivedrab;
   color: #000000;
   display: flex;
@@ -134,16 +139,16 @@ li a {
   max-width: 260px;
   transform: rotate(-2deg);
 }
-.article-btn {
-  margin-left: 1.5rem;
+#article-btn {
+  margin-top: 1.5rem;
   transform: rotate(3deg);
 }
 .read-more-btn:hover,
-.article-btn:hover {
+#article-btn:hover {
   background-color: rgb(75, 101, 25);
 }
 .read-more-btn::after,
-.article-btn::after {
+#article-btn::after {
   content: '';
   position: absolute;
   border: 1px solid #000000;

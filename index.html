@@ -446,7 +446,32 @@
           </div>
         </div>
       </div>
-      <button class="article-btn">Add Article</button>
+      <hr class="featurette-divider"/>
+        <div class="row featurette">
+          <div class="col-md-7">
+            <div class="hidden-text">
+              <form class="article-form">
+                <label for="newsTitle">Article Headline:</label>
+                <input type="text" id="newsTitle" name="newsTitle">
+
+                <label for="articleText">Article Contents:</label>                
+                <textarea name="articleText" rows="10" cols="10">Write your main article contents here!</textarea>
+                <label for="quoteText">Article Contents:</label>                
+                <textarea name="quoteText" rows="10" cols="10">Write a quote here!</textarea>
+                <label for="articleText">Hidden Article Contents:</label>                
+                <textarea name="articleText" rows="10" cols="10">Write your hidden article contents here! (Shown after pressing Read More button)</textarea>
+              
+                <label for="imageUpload">Upload article picture here:</label>
+                <input type="file" id="imageUpload" name="imageUpload">
+
+                <br>
+
+                <input type="submit" value="Submit">
+              </form>
+            </div>
+            <button id="article-btn">Add Article</button>
+          </div>
+        </div>
     </div>
     <hr class="featurette-divider" />
 
