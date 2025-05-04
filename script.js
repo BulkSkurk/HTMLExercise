@@ -16,22 +16,45 @@ document.querySelectorAll('.read-more-btn, #article-btn').forEach((button) => {
   });
 });
 
-// function addNewsForm() {
-//   let newsDiv = document.createElement('div');
-//   newsDiv.textContent = 'This is new!';
-//   document.getElementById('article-body').append(newsDiv);
-//   //Works, save for later
-// }
+function addNewsFormToPage() {
+  let newsDiv = document.createElement('div');
+  newsDiv.textContent = 'This is new!';
+  document.getElementById('article-body').append(newsDiv);
+  //Works, save for later
+}
 function addNewsForm(event) {
   event.preventDefault();
 
   const form = event.target;
-  const title = form.newsTitle.value;
+  const titleText = form.newsTitle.value;
+  const articleText = form.articleText.value;
+  const quoteText = form.quoteText.value;
+  const hiddenText = form.articleTextHidden.value;
 
-  console.log(title);
+  const imageFile = form.imageUpload.files[0];
+
+  if (imageFile) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      const imageDataUrl = e.target.result;
+
+      console.log('Image as data URL:', imageDataUrl);
+
+      const articleData = {
+        title: titleText,
+        article: articleText,
+        quote: quoteText,
+        hidden: hiddenText,
+        image: imageDataUrl
+      };
+      addNewsFormToPage(articleData);
+    };
+    reader.readAsDataURL(imageFile);
+  } else {
+    console.log('No image uploaded!');
+  }
 }
 
-//document.getElementById('article-btn').addEventListener('click', addNewsForm);
 document.getElementById('article-form').addEventListener('submit', addNewsForm);
 
 //AI Newsletter? Tack Martin
