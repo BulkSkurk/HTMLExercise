@@ -47,12 +47,20 @@ function addNewsForm(event) {
         hidden: hiddenText,
         image: imageDataUrl
       };
-      addNewsFormToPage(articleData);
+      //addNewsFormToPage(articleData);
+      showToast('Article Uploaded ✅');
     };
     reader.readAsDataURL(imageFile);
   } else {
-    console.log('No image uploaded!');
+    showToast('Article Upload Failed ❌');
   }
+}
+
+function showToast(message) {
+  const toastElement = document.getElementById('toast');
+  toastElement.querySelector('.toast-body').textContent = message;
+  const toast = new bootstrap.Toast(toastElement, { delay: 3000, autohide: true });
+  toast.show();
 }
 
 document.getElementById('article-form').addEventListener('submit', addNewsForm);
