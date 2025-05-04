@@ -16,11 +16,20 @@ document.querySelectorAll('.read-more-btn, #article-btn').forEach((button) => {
   });
 });
 
-function addNewsFormToPage() {
-  let newsDiv = document.createElement('div');
-  newsDiv.textContent = 'This is new!';
-  document.getElementById('article-body').append(newsDiv);
-  //Works, save for later
+function addNewsFormToPage(articleData) {
+  document.getElementById('article-body').innerHTML += createArticleHTML(articleData);
+}
+function createArticleHTML(articleData) {
+  return `
+          <hr class="featurette-divider" />
+          <div class="row featurette">
+            <div class="col-md-7">
+              <h2 class="featurette-heading fw-normal lh-1">
+              ${articleData.title}              
+              </h2>
+            </div>
+          </div>
+  `;
 }
 function addNewsForm(event) {
   event.preventDefault();
@@ -47,7 +56,7 @@ function addNewsForm(event) {
         hidden: hiddenText,
         image: imageDataUrl
       };
-      //addNewsFormToPage(articleData);
+      addNewsFormToPage(articleData);
       showToast('Article Uploaded ✅');
     };
     reader.readAsDataURL(imageFile);
