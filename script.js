@@ -4,12 +4,19 @@ reAddEventListeners();
 
 function reAddEventListeners() {
   document.querySelectorAll('.read-more-btn, #article-btn').forEach((button) => {
-    button.removeEventListener('click', buttonHandlerFunction(button));
-    button.addEventListener('click', buttonHandlerFunction(button));
+    button.removeEventListener('click', addButtonHandler(button));
+    button.addEventListener('click', addButtonHandler(button));
   });
 }
 
-function buttonHandlerFunction(button) {
+function removeArticleButtonHandlerFunction() {
+  document.querySelectorAll('.remove-article-btn').forEach((button) => {
+    button.addEventListener('click', function () {
+      //continiue here! Need to remove the article from the LocalStorage and reload the page.
+    });
+  });
+}
+function addButtonHandler(button) {
   return function () {
     const hiddenText = button.closest('.col-md-7').querySelector('.hidden-text');
     hiddenText.classList.toggle('show');
