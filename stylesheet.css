@@ -157,7 +157,8 @@ li a {
   border: 1px solid black;
 }
 .read-more-btn,
-#article-btn {
+#article-btn,
+.remove-article-btn {
   background-color: olivedrab;
   color: #000000;
   display: flex;
@@ -176,11 +177,13 @@ li a {
   transform: rotate(3deg);
 }
 .read-more-btn:hover,
-#article-btn:hover {
+#article-btn:hover,
+.remove-article-btn:hover {
   background-color: rgb(75, 101, 25);
 }
 .read-more-btn::after,
-#article-btn::after {
+#article-btn::after,
+.remove-article-btn::after {
   content: '';
   position: absolute;
   border: 1px solid #000000;
@@ -188,6 +191,9 @@ li a {
   left: 4px;
   width: calc(100% - 1px);
   height: calc(100% - 1px);
+}
+.remove-article-btn {
+  margin-top: 5rem;
 }
 /*---- Weather gadget ----*/
 .gradient-custom {

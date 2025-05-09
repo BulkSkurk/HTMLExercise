@@ -1,5 +1,5 @@
 'use strict';
-
+loadArticlesFromLocalStorageOnPageLoad();
 reAddEventListeners();
 
 function reAddEventListeners() {
@@ -23,10 +23,23 @@ function buttonHandlerFunction(button) {
   };
 }
 
+function loadArticlesFromLocalStorageOnPageLoad() {
+  const articles = JSON.parse(localStorage.getItem('articles')) || [];
+  console.log(articles);
+}
+
+function loadArticlesFromLocalStorage(articleData) {
+  const articles = JSON.parse(localStorage.getItem('articles')) || [];
+  articles.push(articleData);
+  localStorage.setItem('articles', JSON.stringify(articles));
+}
+
 function addNewsFormToPage(articleData) {
   document.getElementById('article-body').innerHTML += createArticleHTML(articleData);
   reAddEventListeners();
+  loadArticlesFromLocalStorage(articleData);
 }
+
 function createArticleHTML(articleData) {
   return `
           <hr class="featurette-divider" />
@@ -35,6 +48,7 @@ function createArticleHTML(articleData) {
               <h2 class="featurette-heading fw-normal lh-1">
               ${articleData.title}              
               </h2>
+              <p>${articleData.date}</p>
               <div class="lead">
               <p>
               ${articleData.article}
@@ -47,6 +61,7 @@ function createArticleHTML(articleData) {
               </div>
             </div>
             <button class="read-more-btn">Read More!</button>
+            <button class="remove-article-btn">Remove Article!</button>
           </div>
             <div class="col-md-5">
               <img class="featurette-image" src="${articleData.image}" />
@@ -63,6 +78,7 @@ function addNewsForm(event) {
   const hiddenText = form.articleTextHidden.value;
 
   const imageFile = form.imageUpload.files[0];
+  const dateText = new Date().toDateString();
 
   if (imageFile) {
     const reader = new FileReader();
@@ -74,7 +90,8 @@ function addNewsForm(event) {
         article: articleText,
         quote: quoteText,
         hidden: hiddenText,
-        image: imageDataUrl
+        image: imageDataUrl,
+        date: dateText
       };
       addNewsFormToPage(articleData);
       showToast('Article Uploaded ✅');
@@ -93,6 +110,3 @@ function showToast(message) {
 }
 
 document.getElementById('article-form').addEventListener('submit', addNewsForm);
-
-//AI Newsletter? Tack Martin
-//Stupid commercial banner
