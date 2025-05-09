@@ -1,10 +1,18 @@
 'use strict';
 
-document.querySelectorAll('.read-more-btn, #article-btn').forEach((button) => {
-  button.addEventListener('click', function () {
+reAddEventListeners();
+
+function reAddEventListeners() {
+  document.querySelectorAll('.read-more-btn, #article-btn').forEach((button) => {
+    button.removeEventListener('click', buttonHandlerFunction(button));
+    button.addEventListener('click', buttonHandlerFunction(button));
+  });
+}
+
+function buttonHandlerFunction(button) {
+  return function () {
     const hiddenText = button.closest('.col-md-7').querySelector('.hidden-text');
     hiddenText.classList.toggle('show');
-
     let valueToSet = '';
     if (button.innerHTML === 'Read More!' || button.innerHTML === 'Read Less!') {
       valueToSet = button.innerHTML == 'Read More!' ? 'Read Less!' : 'Read More!';
@@ -12,12 +20,12 @@ document.querySelectorAll('.read-more-btn, #article-btn').forEach((button) => {
       valueToSet = button.innerHTML == 'Add Article' ? 'Hide Form' : 'Add Article';
     }
     button.innerHTML = valueToSet;
-    //Kind of ugly fix, revisit this.
-  });
-});
+  };
+}
 
 function addNewsFormToPage(articleData) {
   document.getElementById('article-body').innerHTML += createArticleHTML(articleData);
+  reAddEventListeners();
 }
 function createArticleHTML(articleData) {
   return `
@@ -27,8 +35,22 @@ function createArticleHTML(articleData) {
               <h2 class="featurette-heading fw-normal lh-1">
               ${articleData.title}              
               </h2>
+              <div class="lead">
+              <p>
+              ${articleData.article}
+              </p>
+              <div class="hidden-text">
+                <p>${articleData.hidden}</p>
+                <section class="quote">
+                  ${articleData.quote}
+                </section>
+              </div>
             </div>
+            <button class="read-more-btn">Read More!</button>
           </div>
+            <div class="col-md-5">
+              <img class="featurette-image" src="${articleData.image}" />
+            </div>
   `;
 }
 function addNewsForm(event) {
@@ -46,8 +68,6 @@ function addNewsForm(event) {
     const reader = new FileReader();
     reader.onload = function (e) {
       const imageDataUrl = e.target.result;
-
-      console.log('Image as data URL:', imageDataUrl);
 
       const articleData = {
         title: titleText,
