@@ -25,7 +25,10 @@ function buttonHandlerFunction(button) {
 
 function loadArticlesFromLocalStorageOnPageLoad() {
   const articles = JSON.parse(localStorage.getItem('articles')) || [];
-  console.log(articles);
+  for (let i in articles) {
+    addNewsFormToPage(articles[i]);
+    reAddEventListeners();
+  }
 }
 
 function loadArticlesFromLocalStorage(articleData) {
@@ -37,7 +40,6 @@ function loadArticlesFromLocalStorage(articleData) {
 function addNewsFormToPage(articleData) {
   document.getElementById('article-body').innerHTML += createArticleHTML(articleData);
   reAddEventListeners();
-  loadArticlesFromLocalStorage(articleData);
 }
 
 function createArticleHTML(articleData) {
@@ -94,6 +96,7 @@ function addNewsForm(event) {
         date: dateText
       };
       addNewsFormToPage(articleData);
+      loadArticlesFromLocalStorage(articleData);
       showToast('Article Uploaded ✅');
     };
     reader.readAsDataURL(imageFile);
