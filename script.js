@@ -1,6 +1,7 @@
 'use strict';
 loadArticlesFromLocalStorageOnPageLoad();
 reAddEventListeners();
+removeArticleButtonHandlerFunction();
 
 function reAddEventListeners() {
   document.querySelectorAll('.read-more-btn, #article-btn').forEach((button) => {
@@ -11,10 +12,28 @@ function reAddEventListeners() {
 
 function removeArticleButtonHandlerFunction() {
   document.querySelectorAll('.remove-article-btn').forEach((button) => {
-    button.addEventListener('click', function () {
-      //continiue here! Need to remove the article from the LocalStorage and reload the page.
-    });
+    button.addEventListener('click', removeButtonHandler(button));
   });
+}
+function removeButtonHandler(button) {
+  return function () {
+    const closestTitle = button
+      .closest('.row')
+      .querySelector('.featurette-heading')
+      .innerHTML.trim();
+
+    const articles = JSON.parse(localStorage.getItem('articles')) || [];
+    let newArticles = [];
+    for (let i in articles) {
+      if (articles[i].title.trim() == closestTitle) {
+        continue;
+      }
+      newArticles.push(articles[i]);
+    }
+    localStorage.removeItem('articles');
+    localStorage.setItem('articles', JSON.stringify(newArticles));
+    location.reload();
+  };
 }
 function addButtonHandler(button) {
   return function () {
