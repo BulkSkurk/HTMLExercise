@@ -78,12 +78,13 @@ function loadArticlesFromLocalStorage(articleData) {
 function addNewsFormToPage(articleData) {
   document.getElementById('article-body').innerHTML += createArticleHTML(articleData);
   document.getElementsByClassName('sidenav')[0].innerHTML += createSidebarHTML(articleData);
+
   reAddEventListeners();
 }
 
 function createSidebarHTML(articleData) {
   return `
-  <a href="#${articleData.title}">${
+  <a href="#article${document.getElementsByClassName('row featurette').length - 1}">${
     articleData.title.length > 10 ? articleData.title.slice(0, 12) + '...' : articleData.title
   }</a>
   `;
@@ -92,7 +93,9 @@ function createSidebarHTML(articleData) {
 function createArticleHTML(articleData) {
   return `
           <hr class="featurette-divider" />
-          <div class="row featurette" id="${articleData.title}">
+          <div class="row featurette" id="article${
+            document.getElementsByClassName('row featurette').length
+          }">
             <div class="col-md-7">
               <h2 class="featurette-heading fw-normal lh-1">
               ${articleData.title}              

@@ -28,6 +28,7 @@ li a {
   left: 160px;
   top: 40px;
   overflow: auto;
+  width: 90%;
 }
 .carousel-item {
   height: auto;
