@@ -17,3 +17,5 @@ Note that this does not apply to pre-defined articles.
 Custom articles are stored in localstorage.
 Navbar for custom articles work by counting article elements and asssigning the article an id using the article count as its ID.
 (Href = article + Count basically)
+
+You can remove your custom articles by pressing the "Remove Article!" button below the article.
