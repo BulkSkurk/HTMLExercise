@@ -32,13 +32,25 @@ function removeButtonHandler(button) {
     }
     localStorage.removeItem('articles');
     localStorage.setItem('articles', JSON.stringify(newArticles));
-    location.reload();
+    showToast('Article Removed! ✅');
   };
 }
 function addButtonHandler(button) {
   return function () {
     const hiddenText = button.closest('.col-md-7').querySelector('.hidden-text');
+    const truncText = button.closest('.col-md-7').querySelector('.truncated-text');
+    const truncTextFull = button.closest('.col-md-7').querySelector('.text-full');
+
+    if (
+      button.innerHTML !== 'Add Article' &&
+      button.innerHTML !== 'Hide Form' &&
+      truncText !== null
+    ) {
+      truncText.classList.toggle('hidden');
+      truncTextFull.classList.toggle('show');
+    }
     hiddenText.classList.toggle('show');
+
     let valueToSet = '';
     if (button.innerHTML === 'Read More!' || button.innerHTML === 'Read Less!') {
       valueToSet = button.innerHTML == 'Read More!' ? 'Read Less!' : 'Read More!';
@@ -78,9 +90,10 @@ function createArticleHTML(articleData) {
               </h2>
               <p>${articleData.date}</p>
               <div class="lead">
-              <p>
-              ${articleData.article}
+              <p class="truncated-text">
+              ${truncateText(articleData.article)}
               </p>
+              <p class="text-full hidden">${articleData.article}</p>
               <div class="hidden-text">
                 <p>${articleData.hidden}</p>
                 <section class="quote">
@@ -95,6 +108,9 @@ function createArticleHTML(articleData) {
               <img class="featurette-image" src="${articleData.image}" />
             </div>
   `;
+}
+function truncateText(text) {
+  return text.length > 60 ? text.slice(0, 60) + '...' : text;
 }
 function addNewsForm(event) {
   event.preventDefault();
@@ -136,6 +152,7 @@ function showToast(message) {
   toastElement.querySelector('.toast-body').textContent = message;
   const toast = new bootstrap.Toast(toastElement, { delay: 3000, autohide: true });
   toast.show();
+  setTimeout(() => window.location.reload(), 2000);
 }
 
 document.getElementById('article-form').addEventListener('submit', addNewsForm);

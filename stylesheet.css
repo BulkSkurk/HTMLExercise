@@ -130,6 +130,9 @@ li a {
 .hidden {
   display: none;
 }
+.show {
+  display: block;
+}
 
 .hidden-text {
   opacity: 0;
